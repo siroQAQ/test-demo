@@ -1,0 +1,15 @@
+---
+test_name:访问必应
+steps:
+  -request: 
+    method: GET
+    url: https://www.bing.com
+
+  -extract:
+    code: [status_code,(.*),0]
+
+  -validate:
+    equals:
+      断言状态码: 
+        ${code}
+        - 200
